@@ -72,6 +72,19 @@ VOLUME /my-volume
 docker images
 ```
 
+- Shows the **docker containers** of your system
+
+```
+docker ps (for active containers)
+docker ps -a (for all containers)
+```
+
+- **Remove** a container
+
+```
+docker rm <container-id> --force
+```
+
 - **Pulling** an image from docker hub
 
 ```
@@ -99,5 +112,23 @@ docker start <container_name or container_id>
 - **Stop** the container
 
 ```
-docker stop <container_name or container_id>
+docker stop <container-name or container-id>
+```
+
+- **Building** the docker image (-t = tags, by default latest)
+
+```
+docker build -t <image-name> <path-to-directory>
+```
+
+- **Run** the docker with port mapping
+
+```
+docker run -p <container-port>:<host-port> image-name
+```
+
+- **Run** the docker with port mapping and volume to reflect changes in code without rebuilding
+
+```
+docker run -p <container-port>:<host-port> -v "$(pwd):/app" -v /app/node_modules image-name
 ```
