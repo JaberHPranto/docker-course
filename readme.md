@@ -132,3 +132,11 @@ docker run -p <container-port>:<host-port> image-name
 ```
 docker run -p <container-port>:<host-port> -v "$(pwd):/app" -v /app/node_modules image-name
 ```
+
+### Docker Compose
+
+- CLI to automatically generate a docker compose file
+
+```
+docker init
+```
